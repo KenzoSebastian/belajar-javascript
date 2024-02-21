@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permainan Suwit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@200;400&family=Pacifico&family=Poppins:wght@200;400;700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <!-- bagian depan Start -->
+    <div class="cover">
+        <div class="lobby">
+            <h2>Selamat Datang<br>di Permainan Suwit</h2>
+            <div class="input">
+                <label for="name">Sebelum mulai permainannya,<br>yuk kenalan dulu!!</label>
+                <input type="text" id="name" required placeholder="Masukan nama mu">
+                <button>Simpan</button>
+            </div>
+            <img class="start" src="start.png" alt="start">
+            <img class="batu-kiri" src="batu.png" alt="">
+            <img class="gunting-kiri" src="gunting.png" alt="">
+            <img class="kertas-kiri" src="kertas.png" alt="">
+            
+            <img class="gunting-kanan" src="gunting.png" alt="">
+            <img class="kertas-kanan" src="kertas.png" alt="">
+            <img class="batu-kanan" src="batu.png" alt="">
+
+            <div class="rule">
+                <h2>Aturan Permainan</h2>
+                <p>1. Kamu akan bermain dengan komputer dimana komputer akan menentukan pilihannya secara acak.<br>2. Permainan terdiri dari 3 ronde dengan skor maksimal 10.<br>3. Pemenang akan umumkan pada akhir ronde terakhir.</p>
+                <button>Mulai!</button>
+            </div>
+        </div>
+
+        <div class="ronde">
+            <h1></h1>
+            <h2></h2>
+        </div>
+    </div>
+
+    <div class="cover final">
+        <div class="hasil">
+            <h1>Permainan berakhir</h1>
+            <h2>Kamu dinyatakan (menang) dengan perolehan nilai sebagai berikut :</h2>
+            
+            <table>
+                <thead>
+                    <th class="tRonde"></th>
+                    <th class="tNama">nama</th>
+                    <th>Computer</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="tRonde">Ronde 1</th>
+                        <td class="player-poin">-</td>
+                        <td class="comp-poin">-</td>
+                    </tr>
+                    <tr>
+                        <th class="tRonde">Ronde 2</th>
+                        <td class="player-poin">-</td>
+                        <td class="comp-poin">-</td>
+                    </tr>
+                    <tr>
+                        <th class="tRonde">Ronde 3</th>
+                        <td class="player-poin">-</td>
+                        <td class="comp-poin">-</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <span class="garis"></span>
+
+            <img class="refresh" src="refresh-arrow.png" alt="">
+            <p>Main lagi</p>
+            <img class="exit" src="cross.png" alt="">
+            <p>keluar</p>
+        </div>
+    </div>
+
+    <!-- bagian depan End -->
+
+    <!-- game Start -->
+    <h1 class="judul">Permainan Suwit</h1>
+    <div class="container">
+        <div class="area-comp">
+            <h2>Computer :</h2>
+            <span>0</span>
+            <img src="batu.png" alt="batu">
+        </div>
+        <div class="area-hasil"></div>
+        <div class="area-player">
+            <h2>Player :</h2>
+            <span>0</span>
+            <img class="gunting" src="gunting.png" alt="gunting">
+            <img class="batu" src="batu.png" alt="batu">
+            <img class="kertas" src="kertas.png" alt="kertas">
+        </div>
+    </div>
+    <!-- game End -->
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

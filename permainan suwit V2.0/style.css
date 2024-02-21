@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(wallpaper.png);
+}
+
+/* bagian depan */
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.626);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    transition: .3s;
+    /* display: none; */
+}
+
+.cover .lobby {
+    background-image: url(https://cdn.wallpapersafari.com/63/54/lNEQO8.jpg);
+    background-size: cover;
+    width: 80%;
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3vh;
+    padding-top: 3%;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+    transition: .3s;
+    /* display: none; */
+}
+
+.lobby h2 {
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;    
+    font-weight: 400;
+    line-height: 60px;
+    text-shadow: 4px 4px 9px rgba(151, 136, 136, 0.79);    
+    display: block;
+    position: relative;
+    color: azure;
+}
+
+.start {
+    border: none;
+    border-radius: 0;
+    width: 20%;
+    height: auto;
+    transition: .5s;
+    cursor: pointer;
+    position: absolute;
+    bottom: 130px;
+}
+
+.start:hover {
+    transform: scale(.96);
+    filter: brightness(.7);
+}
+
+.lobby .batu-kiri {
+    position: absolute;
+    border: none;
+    left: 15%;
+    top: 3%;
+    animation: putarKanan 2s alternate infinite;
+}
+
+.lobby .gunting-kanan {
+    position: absolute;
+    border: none;
+    right: 15%;
+    top: 3%;
+    animation: putarKiri 2s alternate infinite;
+}
+
+.lobby .gunting-kiri {
+    position: absolute;
+    border: none;
+    left: 0;
+    top: 35%;
+    animation: putarKiri  2s .5s alternate infinite;
+}
+
+.lobby .kertas-kanan {
+    position: absolute;
+    border: none;
+    right: 0;
+    top: 35%;
+    animation: putarKanan  2s .5s alternate infinite;
+}
+
+.lobby .kertas-kiri {
+    position: absolute;
+    border: none;
+    left: 15%;
+    top: 62%;
+    animation: putarKanan 2s 1s alternate infinite;
+}
+
+.lobby .batu-kanan {
+    position: absolute;
+    border: none;
+    right: 15%;
+    top: 62%;
+    animation: putarKiri 2s 1s alternate infinite;
+}
+
+@keyframes putarKanan {
+    0% {
+        transform: rotate(0);
+    } 100% {
+        transform: rotate(30deg);
+    }
+}
+@keyframes putarKiri {
+    0% {
+        transform: rotate(0);
+    } 100% {
+        transform: rotate(-30deg);
+    }
+}
+
+.input {
+    background-image: url(https://wallpapercave.com/wp/LTc4zd2.jpg);
+    background-size: cover;
+    width: 50%;
+    height: 60%;
+    margin-top: 3%;
+    padding: 1.5% 2.5% 2%;
+    border: 3px solid red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateX(200%);
+    transition: .5s;
+    z-index: 1;
+    position: relative;
+}
+
+.input label {
+    font-size: 20px;
+    margin-top: 3%;
+    color: white;
+}
+
+.input input#name {
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    border: 1.5px solid pink;
+    outline: 0;
+    margin-top: 2%;
+    padding-left: 7px;
+    font-size: 22px;
+}
+
+.input p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    font-weight: bolder;
+    font-size: 13px;
+    position: absolute;
+    left: 10%;
+    bottom: 28%;
+}
+
+.input p::before {
+    content: "";
+    display: block;
+    background-image: url(warning.png);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -3px;
+    left: -20px;
+}
+
+.input button {
+    width: 25%;
+    height: 15%;
+    margin-top: 2%;
+    background-color: rgb(86, 208, 167);
+    border: 1px solid rgb(69, 66, 66);
+    border-radius: 7px;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.input button:hover {
+    transform: scale(.97);
+    background-color: rgb(69, 168, 135);
+}
+
+.rule {
+    background-image: url(rule\ bg.png);
+    width: 75%;
+    height: 60%;
+    padding: .5% 2.5% 2%;
+    border: 3px solid rgb(162, 86, 86);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateX(200%);
+    transition: .5s;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    color: rgb(229, 221, 206);
+    line-height: 25px;
+}
+
+.rule button {
+    width: 25%;
+    height: 15%;
+    margin-top: 2%;
+    background-color: rgb(149, 144, 145);
+    border: 1px solid rgb(69, 66, 66);
+    border-radius: 7px;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.rule button:hover {
+    transform: scale(.97);
+    background-color: rgb(124, 121, 121);
+}
+
+
+.ronde{
+    position: absolute;
+    top: 0;
+    color: white;
+    min-height: 73vh;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    transform: scale(0);
+    transition: .3s;
+}
+
+.ronde h2{
+    margin: 170px auto 0;
+}     
+/* game */
+
+.judul {
+    transform: scale(0);
+    transition: .1s;
+}
+
+.container {
+    width: 80%;
+    height: 87vh;
+    background-image: url(bg.png);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3vh;
+}
+
+.container h2 {
+    position: absolute;
+    top: 30px;
+}
+
+.container span {
+    display: inline-block;
+    width: 75px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 18px;
+    font-size: 40px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.area-comp h2 {
+    left: 0;
+}
+
+.area-comp span {
+    left: 140px;
+}
+
+.area-player h2 {
+    right: 80px;
+}
+
+.area-player span {
+    right: 0;
+}
+
+.area-comp, .area-player {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: 50%;
+    position: relative;
+}
+
+img {
+    width: 17%;
+    height: 11vw;
+    border-radius: 50%;
+    border: 4px solid black;
+    transition: all .3s;
+}
+
+.area-hasil {
+    width: 20%;
+    height: 5.5vw;
+    position: absolute;
+    top: 47%;
+    border-radius: 30px;
+    border: 2px solid pink;
+    background-color: rgb(192, 173, 173);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.area-comp {
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid black;
+}
+
+.area-player {
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+    padding-bottom: 30px;
+}
+
+.area-player img:hover {
+    transform: scale(1.05);
+    filter: brightness(.8);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* final */
+
+.final {
+    align-items: center;
+    transform: scale(0); 
+
+}
+
+.hasil {
+    height: 100%;
+    width: 50%;
+    background-image: url(bgNote.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    padding-bottom: 70px;
+
+}
+
+.hasil h1 {
+    position: absolute;
+    top: 70px;
+    left: 22%;
+}
+
+.hasil h2 {
+    position: absolute;
+    top: 110px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0 5%;
+    left: 11%;
+    right: 10%;
+}
+
+.hasil table {
+    position: absolute;
+    top: 180px;
+    left: 13.5%;
+    text-align: center;
+    width: 75%;
+    height: 160px;
+}
+
+.hasil table .tRonde {
+    width: 16.5%;
+    text-align: start;
+}
+
+.hasil .garis {
+    display: block;
+    height: 200px;
+    width: 3px;
+    background-color: rgb(151, 139, 139);
+    position: absolute;
+    top: 160px;
+    left: 54.8%;
+}
+
+.hasil img {
+    border-radius: 0;
+    border: none;
+    height: 10%;
+    width: 10%;
+    z-index: 1;
+    transition: .5s;
+}
+
+.hasil img:nth-child(5) {
+    height: 9%;
+    width: 9%;
+}
+
+.hasil img:hover {
+    transform: translateY(-7px);
+    cursor: pointer;
+}
+
+.hasil img:nth-child(5):hover ~ p:nth-child(6),
+.hasil img:nth-child(7):hover ~ p:nth-child(8) {
+    transform: scale(1.5) translateY(8px);
+}
+
+.hasil p:nth-child(6) {
+    position: absolute;
+    left: 27%;
+    font-size: 10px;
+    transition: .5s;
+    transform: scale(0);
+}
+
+.hasil p:nth-child(8) {
+    position: absolute;
+    right: 29%;
+    font-size: 10px;
+    transition: .5s;
+    transform: scale(0);
+}
